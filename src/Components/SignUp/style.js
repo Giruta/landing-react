@@ -52,16 +52,23 @@ export const StyledButton = styled.button`
   letter-spacing: 0;
   transition: all 1s ease;
   background: #d07081;
-  border-radius: 30px;
-  padding: 10px 40px;
   font-size: 1.2rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: #041469;
+  color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: none;
 
+  &:hover {
+    background-color: #964754;
+    box-shadow: 0 4px #990000;
+    transition: 0.5s;
+  }
+  
   @media (max-width: 576px) {
     width: 100%;
   }
