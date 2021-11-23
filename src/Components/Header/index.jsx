@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Col, Container, Dropdown, DropdownButton, Form, FormControl, InputGroup, Nav, Navbar} from "react-bootstrap";
 import {StyledHeader, StyledImg, StyledInner, StyledSpan, StyledText, StyledTitle, StyledButton} from './style.js';
 import { Parallax } from 'react-parallax';
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -80,6 +80,15 @@ export default class Index extends Component {
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
+
+                <Form.Group as={Col} controlId="formGridState" className='col-lg-2 col-sm-4 col-9'>
+                  <Form.Select defaultValue="Язык..." className='select ms-auto'>
+                    <option>Русский</option>
+                    <option>Украинский</option>
+                    <option>Английский</option>
+                  </Form.Select>
+                </Form.Group>
+
               </Container>
             </Navbar>
 

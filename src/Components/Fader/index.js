@@ -20,6 +20,7 @@ const Fader = ({ text }) => {
         })
       }
     }, 2000)
+
     return ()=> clearInterval(timeout)
   }, [fadeProp])
   return (
