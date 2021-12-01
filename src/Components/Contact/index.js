@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {useEffect} from "react";
 import {
   StyledList,
   StyledCardHeader,
@@ -38,13 +38,13 @@ const Contact = () => {
                 <StyledCardHeader>
                   <StyledList>
                     <li className="me-4">
-                      <a href="#" target="_blank"><FaFacebook/></a>
+                      <a href="https://www.facebook.com/skillsup" target="_blank" rel="noopener noreferrer"><FaFacebook/></a>
                     </li>
                     <li className="me-4">
-                      <a href="#" target="_blank"><FaInstagram/></a>
+                      <a href="https://www.instagram.com/skillsup.ua/" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>
                     </li>
                     <li>
-                      <a href="#" target="_blank"><FaTelegramPlane/></a>
+                      <a href="https://t.me/SkillsUpOnline" target="_blank" rel="noopener noreferrer"><FaTelegramPlane/></a>
                     </li>
                   </StyledList>
                 </StyledCardHeader>
@@ -53,22 +53,22 @@ const Contact = () => {
                     <div className="mb-3">
                       <a className="card_phone" href="tel:+3(048)7562354">
                         <AiTwotonePhone />
-                        +38 (048) 756-23-54
+                        +38 (067) 536-87-70
                       </a>
                       <a className="card_phone" href="tel:+3(048)7562354">
                         <AiTwotonePhone />
-                        +38 (048) 756-23-54
+                        +38 (095) 492-65-67
                       </a>
                     </div>
                     <div className="d-flex mb-3">
                       <FaTelegramPlane />
                       <p className='ms-2 mb-0'>
-                        65000, Украина, г. Одесса Ул Базарная, 36
+                        вул.Михайла Грушевського, 9, Дніпро, 49000
                       </p>
                     </div>
                     <a className="card_email" href="email:info@lab-consult.com">
                       <AiOutlineMail className='me-2'/>
-                      info@lab-consult.com
+                      info@skillsup.ua
                     </a>
                   </StyledCardContact>
                   <StyledCardText>

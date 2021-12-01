@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {useEffect} from "react";
 import {StyledList, StyledSection} from "./style";
 import {Col, Container, Row} from "react-bootstrap";
 import {BsCheckLg} from "react-icons/bs";

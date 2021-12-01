@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import present from "../../assets/present.jpg";
 
 export const StyledSection = styled.section`
   padding: 25px 0;

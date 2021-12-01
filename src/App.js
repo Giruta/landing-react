@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Components/Header/index";
 import Services from "./Components/Services";
@@ -14,24 +14,40 @@ import Present from "./Components/Present";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-      <Services />
-      <Statistic />
-      <Leader />
-      <Thinking />
-      <Slider />
-      <Goals />
-      <Timetable />
-      <Reviews />
-      <SignUp />
-      <Present />
-      <Contact />
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      language: 'ru',
+    }
+    this.onChangeLanguage = this.onChangeLanguage.bind(this);
+  }
+
+  onChangeLanguage(e) {
+    this.setState({
+      language: e.target.value,
+    })
+  }
+  render () {
+    return (
+      <>
+        <Header onChangeLanguage={this.onChangeLanguage} />
+        <Services />
+        <Statistic />
+        <Leader />
+        <Thinking />
+        <Slider />
+        <Goals />
+        <Timetable />
+        <Reviews />
+        <SignUp lang={this.state.language}/>
+        <Present />
+        <Contact />
+        <Footer />
+      </>
+    )
+  }
 }
 
 export default App;

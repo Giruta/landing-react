@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import {Col, Container, Dropdown, DropdownButton, Form, FormControl, InputGroup, Nav, Navbar} from "react-bootstrap";
+import {Col, Container, Form, Nav, Navbar} from "react-bootstrap";
 import {StyledHeader, StyledImg, StyledInner, StyledSpan, StyledText, StyledTitle, StyledButton} from './style.js';
 import { Parallax } from 'react-parallax';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
+// import { MDBIcon } from 'mdb-react-ui-kit';
 
 import lectorMain from '../../assets/lectorMain.webp';
 import headerBg from '../../assets/headerBg.jpeg';
@@ -81,11 +82,16 @@ export default class Index extends Component {
                   </Nav>
                 </Navbar.Collapse>
 
-                <Form.Group as={Col} controlId="formGridState" className='col-lg-2 col-sm-4 col-9'>
-                  <Form.Select defaultValue="Язык..." className='select ms-auto'>
-                    <option>Русский</option>
-                    <option>Украинский</option>
-                    <option>Английский</option>
+                <Form.Group as={Col} controlId="formGridState" className='col-lg-1 col-sm-2 col-6'>
+                  <Form.Select
+                    id='select'
+                    defaultValue="Язык..."
+                    className='select ms-auto'
+                    onChange={this.props.onChangeLanguage}
+                  >
+                    <option value='rus'>ru</option>
+                    <option value='ukr'>uk</option>
+                    <option value='eng'>en</option>
                   </Form.Select>
                 </Form.Group>
 

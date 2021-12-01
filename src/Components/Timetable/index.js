@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {useEffect} from "react";
 import {StyledSection} from "./style";
 import {Col, Container, Row} from "react-bootstrap";
 import Aos from 'aos';

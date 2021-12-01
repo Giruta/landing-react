@@ -1,11 +1,10 @@
-import React, {Component, useEffect} from "react";
+import React, { useEffect } from "react";
 import {StyledList, StyledSection} from "./style";
 import Fader from "../Fader";
 import { BsCheckLg } from 'react-icons/bs';
-import {Col, Container, Image, ListGroup, Row} from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { motion } from 'framer-motion';
 
 import mandala from '../../assets/mandala.jpeg';
 

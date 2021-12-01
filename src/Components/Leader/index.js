@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {useEffect} from "react";
 import lectorSecond from '../../assets/lectorSecond.webp'
 import {Col, Container, Row} from "react-bootstrap";
 import {StyledSection, StyledTitle, StyledImg, StyledListGroup} from "./style";
