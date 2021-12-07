@@ -27,6 +27,8 @@ img {
 select.select {
   background-color: transparent;
   border: 1px solid #d07081;
+  color: #d07081;
+  outline: none;
 }
 .bg_color {
   background-color: #cfd9f2de;
@@ -95,22 +97,10 @@ select.select {
   min-height: 219px;
   height: 100%;
 }
-.card__logo {
-  font-size: 21px;
-  color: #fff;
-  letter-spacing: 0.03em;
-}
-.card__adress i {
-  margin: 5px 12px 0 5px;
-  color: #fff;
-}
 
 /*---------media----------------*/
 
 @media (max-width: 576px) {
-  select.select {
-    width: 50%;
-  }
   .timeline-item:nth-child(odd)::before {
     left: -1px;
   }
@@ -125,14 +115,4 @@ select.select {
     padding-left: 40px;
     padding-right: 0;
   }
-}
-
-/*--------fadein/out--------*/
-.fade-in {
-  transition: opacity 1s ease;
-}
-
-.fade-out {
-  opacity: 0;
-  transition: opacity 1s ease;
 }

@@ -3,18 +3,41 @@ import {Col, Container, Form, Nav, Navbar} from "react-bootstrap";
 import {StyledHeader, StyledImg, StyledInner, StyledSpan, StyledText, StyledTitle, StyledButton} from './style.js';
 import { Parallax } from 'react-parallax';
 import { Link } from "react-scroll";
-// import { MDBIcon } from 'mdb-react-ui-kit';
 
 import lectorMain from '../../assets/lectorMain.webp';
 import headerBg from '../../assets/headerBg.jpeg';
+import CustomersService from "../../Helpers/CustomersService";
 
-export default class Index extends Component {
+const customersService = new CustomersService();
+
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    const element = {
+      "language": e.currentTarget.elements.select.value,
+    }
+
+    const result = customersService.getContent(element)
+      .then(response => {
+        console.log('you have successfully change language');
+        this.props.onChangeContent(response.data)})
+      .catch(e => {
+        console.log('There was an error! Please re-check your answers.', e);
+    });
+
+    e.preventDefault();
+  }
+
   render() {
     return (
       <>
         <Parallax bgImage={headerBg} strength={300}>
           <StyledHeader>
-            <Navbar fixed='top' collapseOnSelect expand='md' id="navbar">
+            <Navbar collapseOnSelect expand='md' id="navbar">
               <Container>
                 <Navbar.Toggle className='me-auto' aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
@@ -82,18 +105,21 @@ export default class Index extends Component {
                   </Nav>
                 </Navbar.Collapse>
 
-                <Form.Group as={Col} controlId="formGridState" className='col-lg-1 col-sm-2 col-6'>
+                <Form
+                  onSubmit={this.handleSubmit}
+                >
+                  <Form.Group as={Col} controlId="formGridState">
                   <Form.Select
                     id='select'
-                    defaultValue="Язык..."
                     className='select ms-auto'
                     onChange={this.props.onChangeLanguage}
                   >
-                    <option value='rus'>ru</option>
-                    <option value='ukr'>uk</option>
-                    <option value='eng'>en</option>
+                    <option value='ru'>🇷🇺 Ru</option>
+                    <option value='uk'>🇺🇦 Uk</option>
+                    <option value='en'>🇬🇧 En</option>
                   </Form.Select>
                 </Form.Group>
+                </Form>
 
               </Container>
             </Navbar>

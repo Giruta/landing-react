@@ -13,15 +13,21 @@ import SignUp from "./Components/SignUp";
 import Present from "./Components/Present";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import CustomersService from "./Helpers/CustomersService";
+
+const customersService = new CustomersService();
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      language: 'ru',
+      language: '',
+      content: null,
+      isLoading: false,
     }
     this.onChangeLanguage = this.onChangeLanguage.bind(this);
+    this.onChangeContent = this.onChangeContent.bind(this);
   }
 
   onChangeLanguage(e) {
@@ -29,10 +35,20 @@ class App extends React.Component {
       language: e.target.value,
     })
   }
+
+  onChangeContent(data) {
+    this.setState({
+      content: data,
+    })
+  }
+
   render () {
     return (
       <>
-        <Header onChangeLanguage={this.onChangeLanguage} />
+        <Header
+          onChangeLanguage={this.onChangeLanguage}
+          onChangeContent={this.onChangeContent}
+        />
         <Services />
         <Statistic />
         <Leader />
@@ -47,6 +63,18 @@ class App extends React.Component {
         <Footer />
       </>
     )
+  }
+  async componentDidMount() {
+    // axios.defaults.headers.common['CLIENT_IP'] = clientIP
+    // let self = this;
+    this.setState({...this.state, isLoading: true})
+    customersService.getContent()
+      .then(response => {
+      console.log("you have successfully get first data", response);
+      this.setState({ content: response.data, isLoading: false })})
+      .catch(e => {
+      console.log('There was an error! Please re-check your answers.', e);
+    });
   }
 }
 

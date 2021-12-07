@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
   height: 74vh;
-  padding: 56px 0 15px;
+  padding: 0 0 15px;
   left: 0;
   right: 0;
   z-index: 1;
@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
   background: url("../../assets/headerBg.jpeg") no-repeat;
   position: relative;
   color: #d07081;
+  object-fit: cover;
 
   @media (max-width: 991px) {
     height: 60vh;
@@ -32,7 +33,7 @@ export const StyledImg = styled.img`
     right: 10%;
   }
   @media (max-width: 767px) {
-    width: 42%;
+    width: 40%;
   }
   @media (max-width: 576px) {
     width: 55%;

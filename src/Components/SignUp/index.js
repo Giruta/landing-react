@@ -23,11 +23,14 @@ export default class SignUp extends Component {
       "phone": elements.phone.value,
       "language": this.props.lang,
     };
-    customersService.createCustomer(vartemp).then((result)=>{
-      alert("you have successfully registered!");
-    }).catch(()=>{
-      alert('There was an error! Please re-check your answers.');
+    customersService.createCustomer(vartemp)
+      .then(result => {
+      debugger;
+      console.log('result = ', result)})
+      .catch(e => {
+      alert(e.message);
     });
+
     e.preventDefault();
   }
 
