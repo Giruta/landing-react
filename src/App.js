@@ -49,18 +49,18 @@ class App extends React.Component {
           onChangeLanguage={this.onChangeLanguage}
           onChangeContent={this.onChangeContent}
         />
-        <Services />
-        <Statistic />
-        <Leader />
-        <Thinking />
-        <Slider />
-        <Goals />
-        <Timetable />
-        <Reviews />
-        <SignUp lang={this.state.language}/>
-        <Present />
-        <Contact />
-        <Footer />
+        <Services content={this.state.content} />
+        <Statistic content={this.state.content} />
+        <Leader content={this.state.content} />
+        <Thinking content={this.state.content} />
+        <Slider content={this.state.content} />
+        <Goals content={this.state.content} />
+        <Timetable content={this.state.content} />
+        <Reviews content={this.state.content} />
+        <SignUp lang={this.state.language} content={this.state.content} />
+        <Present content={this.state.content} />
+        <Contact content={this.state.content} />
+        <Footer content={this.state.content} />
       </>
     )
   }

@@ -9,8 +9,26 @@ const customersService = new CustomersService();
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      meet: '',
+      email: '',
+      name: '',
+      phone: '',
+
+    }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(e) {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   handleSubmit(e) {
@@ -25,7 +43,7 @@ export default class SignUp extends Component {
     };
     customersService.createCustomer(vartemp)
       .then(result => {
-      debugger;
+      // debugger;
       console.log('result = ', result)})
       .catch(e => {
       alert(e.message);
@@ -53,7 +71,11 @@ export default class SignUp extends Component {
                   <h4>Творческие встречи рисования мандал</h4>
                   <Form.Group controlId='formBasicSelect' className='w-100'>
                     <Form.Label className='mt-3 d-block'>Выберите встречу</Form.Label>
-                    <StyledSelect id='meet'>
+                    <StyledSelect
+                      id='meet'
+                      onChange = {this.handleInputChange}
+                      value = {this.state.meet}
+                    >
                       <option>-</option>
                       <option value="Встреча от 20.11.2021">Встреча от 20.11.2021</option>
                       <option value="Встреча от 30.11.2021">Встреча от 30.11.2021</option>
@@ -62,15 +84,33 @@ export default class SignUp extends Component {
                   </Form.Group>
                   <Form.Group controlId='formBasicEmail' className='w-100'>
                     <Form.Label className='mt-3 d-block'>Введите ваш эл.адрес</Form.Label>
-                    <StyledInput id="email" type="email" placeholder="E-mail" />
+                    <StyledInput
+                      id="email"
+                      type="email"
+                      placeholder="E-mail"
+                      value={this.state.email}
+                      onChange = {this.handleInputChange}
+                    />
                   </Form.Group>
                   <Form.Group controlId='formBasicName' className='w-100'>
                     <Form.Label className='mt-3 d-block'>Введите ваше имя</Form.Label>
-                    <StyledInput id="name" type="text" placeholder="Имя" />
+                    <StyledInput
+                      id="name"
+                      type="text"
+                      placeholder="Имя"
+                      value={this.state.name}
+                      onChange = {this.handleInputChange}
+                    />
                   </Form.Group>
                   <Form.Group controlId='formBasicPhone' className='w-100'>
                     <Form.Label className='mt-3 d-block'>Введите ваш телефон</Form.Label>
-                    <StyledInput id="phone" type="tel" placeholder="Телефон" />
+                    <StyledInput
+                      id="phone"
+                      type="tel"
+                      placeholder="Телефон"
+                      value={this.state.phone}
+                      onChange = {this.handleInputChange}
+                    />
                   </Form.Group>
                   <Form.Text className="mt-5">
                     Нажимая на кнопку, вы соглашаетесь на обработку персональных данных

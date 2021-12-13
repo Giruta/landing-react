@@ -3,7 +3,6 @@ import {StyledButton} from "./style";
 import { Link } from "react-scroll";
 import {Col, Row} from "react-bootstrap";
 
-
 const Button = (props) => {
   return (
     <Row className="row d-flex justify-content-center">
