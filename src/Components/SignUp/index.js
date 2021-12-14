@@ -26,9 +26,10 @@ export default class SignUp extends Component {
   }
 
   handleInputChange(e) {
+    // debugger;
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    const name = target.id;
 
     this.setState({
       [name]: value
@@ -108,10 +109,10 @@ export default class SignUp extends Component {
                       onChange = {this.handleInputChange}
                       value = {this.state.meet}
                     >
-                      <option>-</option>
-                      <option value="Встреча от 20.11.2021">Встреча от 20.11.2021</option>
-                      <option value="Встреча от 30.11.2021">Встреча от 30.11.2021</option>
-                      <option value="Встреча от 30.11.2021">Встреча от 30.11.2021</option>
+                      <option name='meet' value="">-</option>
+                      <option name='meet' value="Встреча от 20.11.2021">Встреча от 20.11.2021</option>
+                      <option name='meet' value="Встреча от 30.11.2021">Встреча от 30.11.2021</option>
+                      <option name='meet' value="Встреча от 30.11.2021">Встреча от 30.11.2021</option>
                     </StyledSelect>
                   </Form.Group>
                   <Form.Group controlId='formBasicEmail' className='w-100'>
