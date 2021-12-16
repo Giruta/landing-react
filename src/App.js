@@ -72,10 +72,10 @@ class App extends React.Component {
   }
 
   render () {
-    const {header, services, statistic, leader, thinking, sliderTitle, goals,
-      timetable, reviewsTitle, signup, present, contact, footer} = content;
     // const {header, services, statistic, leader, thinking, sliderTitle, goals,
-    //       timetable, reviewsTitle, signup, present, contact, footer} = this.state.content;
+    //   timetable, reviewsTitle, signup, present, contact, footer} = content;
+    const {header, services, statistic, leader, thinking, sliderTitle, goals,
+          timetable, reviewsTitle, signup, present, contact, footer} = this.state.content;
     return (
       <>
         <Header
@@ -91,7 +91,10 @@ class App extends React.Component {
         <Goals content={goals} />
         <Timetable content={timetable} />
         <Reviews content={reviewsTitle} />
-        <SignUp lang={this.state.language} content={this.state.content} />
+        <SignUp
+          lang={this.state.language}
+          content={signup}
+        />
         <Present content={present} />
         <Contact content={contact} />
         <Footer content={footer} />
