@@ -14,6 +14,7 @@ import Present from "./Components/Present";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import CustomersService from "./Helpers/CustomersService";
+
 import content from "./Helpers/content";
 
 const customersService = new CustomersService();
@@ -24,7 +25,7 @@ class App extends React.Component {
 
     this.state = {
       language: '',
-      content: null,
+      content: content,
       isLoading: false,
     }
     this.onChangeLanguage = this.onChangeLanguage.bind(this);
@@ -35,9 +36,8 @@ class App extends React.Component {
     this.setState({
       language: e.target.value,
     })
-    const element = e.currentTarget.value;
 
-    const result = customersService.getContent(element)
+    const result = customersService.getContent(e.target.value)
       .then(response => {
         console.log('you have successfully change language');
         console.log('response.data = ', response);
@@ -55,11 +55,12 @@ class App extends React.Component {
     // let self = this;
     this.setState({...this.state, isLoading: true})
     // debugger;
-    customersService.getContent()
+    customersService.getContent('ru')
       .then(response => {
         // debugger;
         console.log("you have successfully get first data", response);
-        this.setState({ content: response, isLoading: false })})
+        this.setState({ content: response, isLoading: false })
+      })
       .catch(e => {
         console.log('There was an error! Please re-check your answers.', e);
       });
@@ -72,8 +73,6 @@ class App extends React.Component {
   }
 
   render () {
-    // const {header, services, statistic, leader, thinking, sliderTitle, goals,
-    //   timetable, reviewsTitle, signup, present, contact, footer} = content;
     const {header, services, statistic, leader, thinking, sliderTitle, goals,
           timetable, reviewsTitle, signup, present, contact, footer} = this.state.content;
     return (
