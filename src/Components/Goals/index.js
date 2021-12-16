@@ -6,19 +6,19 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Button from "../Button";
 
-const Goals = () => {
+const Goals = (props) => {
   useEffect(()=> {
     Aos.init({ duration: 2000 });
   }, []);
+  const goals = props.content;
   return (
     <>
       <StyledSection id="goals">
         <Container>
           <Row className="justify-content-center">
             <Col lg={10} md={12}>
-              <h3 className="text-center">Это больше, чем просто рисование</h3>
-              <StyledSubtitle className="text-center">
-                Эти милые завитушки могут кое-что изменить в вашей жизни
+              <h3 className="text-center">{goals.title ? goals.title : ''}</h3>
+              <StyledSubtitle className="text-center">{goals.subtitle ? goals.subtitle : ''}
               </StyledSubtitle>
             </Col>
           </Row>
@@ -28,21 +28,15 @@ const Goals = () => {
                 <li data-aos='slide-right'>
                   <BsCheckLg />
                   <div className="goals_text">
-                    <h5>Средство от хандры и стресса</h5>
-                    <p>Суета мегаполиса, "день сурка", хроническая усталость знакомы многим.
-                      Рисование мандалы поможет отключить внутренний монолог, снять напряжение
-                      и приятно разнообразить будни
-                    </p>
+                    <h5>{goals.list.first.title ? goals.list.first.title : ''}</h5>
+                    <p>{goals.list.first.info ? goals.list.first.info : ''}</p>
                   </div>
                 </li>
                 <li data-aos='slide-right'>
                   <BsCheckLg />
                   <div className="goals_text">
-                    <h5>Развитие правого полушария мозга</h5>
-                    <p>Правое полушарие отвечает за интуицию, воображение, способность мечтать
-                      и даже заниматься сексом. Мандала дает ему нагрузку и развивает наши
-                      творческие способности.
-                    </p>
+                    <h5>{goals.list.second.title ? goals.list.second.title : ''}</h5>
+                    <p>{goals.list.second.info ? goals.list.second.info : ''}</p>
                   </div>
                 </li>
               </StyledList>
@@ -52,20 +46,15 @@ const Goals = () => {
                 <li data-aos='slide-left'>
                   <BsCheckLg />
                   <div className="goals_text">
-                    <h5>Стимул начать творить</h5>
-                    <p>Творчество делает нашу жизнь яркой, гармоничной и вдохновенной.
-                      Техника рисования мандалы проста и доступна каждому, это позволит
-                      впустить творчество в свою жизнь и сделать ее более счастливой
-                    </p>
+                    <h5>{goals.list.third.title ? goals.list.third.title : ''}</h5>
+                    <p>{goals.list.third.info ? goals.list.third.info : ''}</p>
                   </div>
                 </li>
                 <li data-aos='slide-left'>
                   <BsCheckLg />
                   <div className="goals_text">
-                    <h5>Победа над внутренним критиком</h5>
-                    <p>В процессе обучения мы снимем такие психологические барьеры к творчеству,
-                      как излишний перфекционизм, самокритика, зависимость от мнения окружающих
-                    </p>
+                    <h5>{goals.list.second.title ? goals.list.second.title : ''}</h5>
+                    <p>{goals.list.third.info ? goals.list.third.info : ''}</p>
                   </div>
                 </li>
               </StyledList>

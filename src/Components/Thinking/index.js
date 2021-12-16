@@ -23,20 +23,20 @@ const Thinking = (props) => {
           <Row>
             <Col data-aos='fade-right' lg={6} md={12}>
               <StyledList>
-                <li><BsCheckLg /></li>
-                <li><BsCheckLg /></li>
-                <li><BsCheckLg /></li>
+                <li><BsCheckLg />{thinking ? thinking.list.first.first : ''}</li>
+                <li><BsCheckLg />{thinking ? thinking.list.first.second : ''}</li>
+                <li><BsCheckLg />{thinking ? thinking.list.first.third : ''}</li>
               </StyledList>
             </Col>
             <Col data-aos='fade-left' lg={6} md={12}>
               <StyledList>
-                <li><BsCheckLg /></li>
-                <li><BsCheckLg /></li>
-                <li><BsCheckLg /></li>
+                <li><BsCheckLg />{thinking ? thinking.list.second.first : ''}</li>
+                <li><BsCheckLg />{thinking ? thinking.list.second.second : ''}</li>
+                <li><BsCheckLg />{thinking ? thinking.list.second.third : ''}</li>
               </StyledList>
             </Col>
           </Row>
-          <Button text='Записаться' />
+          <Button text={thinking ? thinking.btn : ''} />
         </Container>
       </StyledSection>
     </>

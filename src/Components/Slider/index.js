@@ -10,13 +10,14 @@ import slider_5 from '../../assets/slider_5.jpeg';
 
 export default class Slider extends Component {
   render() {
+    const sliderTitle = this.props.content;
     return (
       <>
         <StyledSection id='slider'>
           <Container>
             <Row className='justify-content-center'>
               <Col lg={10} md={12} className='text-center'>
-                <StyledTitle>Они не умели рисовать, но у них все получилось! Присоединяйся!</StyledTitle>
+                <StyledTitle>{sliderTitle ? sliderTitle : ''}</StyledTitle>
               </Col>
             </Row>
             <Row>
