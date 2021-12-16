@@ -6,42 +6,33 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Button from "../Button";
 
-const Thinking = () => {
+const Thinking = (props) => {
   useEffect(()=> {
     Aos.init({ duration: 2000 });
   }, []);
+  const thinking = props.content;
   return (
     <>
       <StyledSection id="thinking">
         <Container>
           <Row>
             <Col md={12}>
-              <h3 className="text-center mb-4">Вы все еще думаете, что наш Урок не для Вас?</h3>
+              <h3 className="text-center mb-4">{thinking ? thinking.title : ''}</h3>
             </Col>
           </Row>
           <Row>
             <Col data-aos='fade-right' lg={6} md={12}>
               <StyledList>
-                <li><BsCheckLg />Невозможно нарисовать неправильно. Важен процесс, а не результат
-                </li>
-                <li><BsCheckLg />Думаете, что творчество - это для детей, и в 30/40/50 лет уже
-                  поздно
-                  , и друзья засмеют...Но все равно втайне мечтаете о своем первом шедевре!
-                </li>
-                <li><BsCheckLg />Не знаете как быстро восстановить энергию и порадовать внутреннюю
-                  девочку
-                </li>
+                <li><BsCheckLg /></li>
+                <li><BsCheckLg /></li>
+                <li><BsCheckLg /></li>
               </StyledList>
             </Col>
             <Col data-aos='fade-left' lg={6} md={12}>
               <StyledList>
-                <li><BsCheckLg />Рисование мандалы - легальный способ ничего не делать</li>
-                <li><BsCheckLg />Вы хотите сразу прекрасный результат, и у вас нет терпения и
-                  возможности учиться годами
-                </li>
-                <li><BsCheckLg />вам мешают творить страхи: не получится/не умею/руки не от туда
-                  растут
-                </li>
+                <li><BsCheckLg /></li>
+                <li><BsCheckLg /></li>
+                <li><BsCheckLg /></li>
               </StyledList>
             </Col>
           </Row>

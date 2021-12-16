@@ -3,6 +3,9 @@
   padding: 0;
   outline: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: #494545;
   font-size: 15px;

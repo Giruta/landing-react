@@ -1,69 +1,79 @@
-const obj  = {
+const content  = {
   'header': {
     'nav': {
-      'about': 'nav_about_content',
-      'gallery': 'nav_gallery_content',
-      'program': 'nav_program_content',
-      'reviews': 'nav_reviews_content',
-      'contacts': 'nav_contacts_content',
+      'about': 'О нас',
+      'gallery': 'Галерея',
+      'program': 'Программа курса',
+      'reviews': 'Отзывы',
+      'contacts': 'Контакты',
     },
     'inner': {
-      'title': 'inner_title_content',
-      'subtitle': 'inner_subtitle_content',
-      'innerText': 'inner_title_text',
-      'btn': 'inner_button',
+      'title': 'Мандала',
+      'subtitle': 'творческая встреча',
+      'innerText': 'За 30 дней вы поймаете дзен, почувствуете счастье в моменте и создадите шедевр.',
+      'btn': 'Записаться',
     }
   },
   'services': {
-    'title': 'service_title_content',
+    'title': 'Узнаете себя?',
     'list': {
-      'first': 'list_first_content',
-      'second': 'list_second_content',
-      'third': 'list_third_content',
-      'fourth': 'list_fourth_content',
+      'first': 'Рутина поглотила всю жизнь?',
+      'second': 'Давно не отключалась от проблем?',
+      'third': 'Мечтали рисовать, но решили, что это сложно и нет таланта?',
+      'fourth': 'Хочу здесь и сейчас, художественная школа это долго и некогда.?',
     }
   },
   'statistic': {
     'first': {
-      'number': 'first_number_content',
-      'span': 'first_span_content',
-      'info': 'first_info_content',
+      'number': '7893',
+      'span': 'человека',
+      'info': 'По всему миру прошли обучение',
     },
     'second': {
-      'number': 'second_number_content',
-      'span': 'second_span_content',
-      'info': 'second_info_content',
+      'number': '5',
+      'span': 'лет',
+      'info': 'Курс существует c 2014 года',
     },
     'third': {
-      'number': 'third_number_content',
-      'span': 'third_span_content',
-      'info': 'third_info_content',
+      'number': '15',
+      'span': 'минут',
+      'info': 'В день и вы достили Дзен',
     },
     'fourth': {
-      'number': 'fourth_number_content',
-      'span': 'fourth_span_content',
-      'info': 'fourth_info_content',
+      'number': '30',
+      'span': 'дней',
+      'info': 'Займет весь период обучения',
     },
-    'btn': 'statistic_button'
+    'btn': 'Записаться'
   },
   'leader': {
-    'title_begin': 'leader_title_begin',
-    'titleName': 'inner_title_name',
-    'title_end': 'leader_title_end',
+    'title_begin': 'Меня зовут',
+    'titleName': 'Марина Мельник',
+    'title_end': 'и я',
     'list': {
-      'first': 'list_first_content',
-      'second': 'list_second_content',
-      'third': 'list_third_content',
-      'fourth': 'list_fourth_content',
+      'first': '11 лет управляет программами в международной IT-компании',
+      'second': 'Получила международные сертификации Professional Scrum Master I, Certified Scrum Professional и Certified Scrum Master',
+      'third': 'Эксперт в управлении процессами, качеством, поставками персоналом, рисками и взаимоотношениями с клиентами в IT-аутсорсинге',
+      'fourth': 'Когда-то тоже думала, что не умею рисовать',
+      'fifth': 'Прошла долгий путь от всем недовольного человека до эксперта в психологии счастья',
+      'sixth': 'Создаю и веду курсы по саморазвитию',
+      'seventh': 'Совершенно уверена, что в каждом из нас живет творец! И надо лишь помочь ему раскрыться',
     }
   },
   'thinking': {
-    'title': 'thinking_title_content',
+    'title': 'Вы все еще думаете, что наш Урок не для Вас?',
     'list': {
-      'first': 'thinking_first_content',
-      'second': 'thinking_second_content',
-      'third': 'thinking_third_content',
-      'fourth': 'thinking_fourth_content',
+      'first': {
+        'first': 'Невозможно нарисовать неправильно. Важен процесс, а не результат',
+        'second': 'Думаете, что творчество - это для детей, и в 30/40/50 лет уже поздно и друзья засмеют...Но все равно ' +
+                  'втайне мечтаете о своем первом шедевре!',
+        'third': 'Не знаете как быстро восстановить энергию и порадовать внутреннюю девочку',
+      },
+      'second': {
+        'first': 'Рисование мандалы - легальный способ ничего не делать',
+        'second': 'Вы хотите сразу прекрасный результат, и у вас нет терпения и возможности учиться годами',
+        'third': '`ВАам мешают творить страхи: не получится/не умею/руки не от туда растут',
+      },
     },
     'btn': 'thinking_button'
   },
@@ -162,4 +172,4 @@ const obj  = {
   'footer': 'footer_text',
 }
 
-export default obj;
+export default content;

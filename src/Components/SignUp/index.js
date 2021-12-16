@@ -50,7 +50,7 @@ export default class SignUp extends Component {
     }
 
     if(!this.state.phone) {
-      nameError = 'phone cannot be blank';
+      phoneError = 'phone cannot be blank';
     }
 
     if(emailError || nameError) {
@@ -77,7 +77,8 @@ export default class SignUp extends Component {
       customersService.createCustomer(vartemp)
         .then(result => {
           // debugger;
-          console.log('result = ', result)})
+          console.log('result from post = ', result);
+          alert('You have successfully registered')})
         .catch(e => {
           alert(e.message);
         });

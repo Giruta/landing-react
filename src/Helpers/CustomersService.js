@@ -12,20 +12,32 @@ export default class CustomersService{
       this.port = ':8000';
     }
     this.url = this.protocol + '//' + this.host + this.port;
-    console.log('this.url = ', this.url);
   }
 
   createCustomer(customer){
     const url = `${this.url}`;
-    return axios.post(url,customer);
+    const posturl = 'https://jsonplaceholder.typicode.com/posts';
+    return axios.post(posturl,customer);
   }
 
   getContent(data){
     const url = `${this.url}`;
+    const geturl = 'https://jsonplaceholder.typicode.com/posts/1';
     const header = {
-      data
+      mylang:data
     }
-    return axios.get(url, {headers: header})
+    return axios.get(geturl, {headers: header})
+      .then(response => response.data);
+  }
+
+  getContent1(data){
+    const url = `${this.url}`;
+    const geturl = 'https://jsonplaceholder.typicode.com/posts/2';
+    const header = {
+      mylang:data
+    }
+    // debugger;
+    return axios.get(geturl, {headers: header})
       .then(response => response.data);
   }
 }
