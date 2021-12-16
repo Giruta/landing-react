@@ -37,7 +37,7 @@ class App extends React.Component {
     })
     const element = e.currentTarget.value;
 
-    const result = customersService.getContent1(element)
+    const result = customersService.getContent(element)
       .then(response => {
         console.log('you have successfully change language');
         console.log('response.data = ', response);
